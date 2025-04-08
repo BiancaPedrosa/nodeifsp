@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela de Pessoas</title>
+</head>
+<body>
+
+<h2>Tabela de Pessoas</h2>
+
+<table border="1">
+<thead>
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+</tr>
+</thead>
+<tbody id="tabela-pessoas">
+<!-- Os dados serão inseridos aqui via JavaScript -->
+</tbody>
+</table>
+
+<script>
+// Array com as pessoas (nome e idade)
+const pessoas = [
+{ nome: 'Ana', idade: 25 },
+{ nome: 'Carlos', idade: 30 },
+{ nome: 'Maria', idade: 22 }
+];
+
+// Seleciona o corpo da tabela
+const tabela = document.getElementById('tabela-pessoas');
+
+// Adiciona cada pessoa na tabela
+pessoas.forEach(pessoa => {
+const linha = document.createElement('tr');
+
+const celulaNome = document.createElement('td');
+celulaNome.textContent = pessoa.nome;
+linha.appendChild(celulaNome);
+
+const celulaIdade = document.createElement('td');
+celulaIdade.textContent = pessoa.idade;
+linha.appendChild(celulaIdade);
+
+tabela.appendChild(linha);
+});
+</script>
+
+</body>
+</html>

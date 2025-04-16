@@ -14,8 +14,13 @@ app.get("/sobre", function (req, res) {
     res.send("Essa é a página sobre!");
 }
 );
-app.get("/contato", function (req, res) {
-    res.send("Essa é a página de contato!");
+app.get("/fale", function (req, res) {
+    res.sendFile(__dirname + "/fale.html", function (err) {
+        if (err) {
+           console.error("Error sending file:", err);
+           res.status(500).send("Internal Server Error");
+        }
+    })
 }
 );
 app.get('/ola/:nome/:cargo', function (req, res) {

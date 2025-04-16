@@ -23,7 +23,7 @@ app.get('/cardapio', (req, res) => {
 });
 
 // Rota 3: Fale Conosco
-app.get('/fale', (req, res) => {
+app.get('/faleconosco', (req, res) => {
   res.sendFile(path.join(__dirname, 'fale.html'));
 });
 

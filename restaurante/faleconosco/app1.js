@@ -24,7 +24,7 @@ app.get('/cardapio', (req, res) => {
 
 // Rota 3: Fale Conosco
 app.get('/faleconosco', (req, res) => {
-  res.sendFile(path.join(__dirname, 'fale.html'));
+  res.sendFile(path.join(__dirname, 'faleconosco.html'));
 });
 
 //Rota 4: Salvar Mensagem

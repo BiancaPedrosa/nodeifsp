@@ -24,7 +24,7 @@ const produtoController = {
 
     // Controller para o POST /produtos/add 
     addNewProduct: async (req, res) => {
-        const { nome, descricao, preco } = req.body;
+        const { nome, preco } = req.body;
         try {
             await Produtos.create({
                 nome: nome,
@@ -58,7 +58,7 @@ const produtoController = {
     updateProduct: async (req, res) => {
         try {
             const productId = req.params.id;
-            const { nome, descricao, preco } = req.body;
+            const { nome, preco } = req.body;
             const [affectedRows] = await Produtos.update(
                 {
                     nome: nome,

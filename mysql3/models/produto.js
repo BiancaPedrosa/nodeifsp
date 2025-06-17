@@ -15,4 +15,12 @@ const Produtos = sequelize.define('produtos', {
       allowNull: false
    }
 })
+sequelize.sync({ force: false })
+   .then(() => {  
+      console.log('Tabela produtos criada com sucesso!');
+   })
+   .catch((error) => {
+      console.error('Erro ao criar tabela produtos:', error);
+   });
+// Export the Produtos model
 export default Produtos;

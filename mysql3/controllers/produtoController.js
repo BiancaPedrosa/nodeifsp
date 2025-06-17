@@ -28,7 +28,6 @@ const produtoController = {
         try {
             await Produtos.create({
                 nome: nome,
-                descricao: descricao,
                 preco: parseFloat(preco)
             });
             res.redirect('/produtos');
@@ -63,7 +62,6 @@ const produtoController = {
             const [affectedRows] = await Produtos.update(
                 {
                     nome: nome,
-                    descricao: descricao,
                     preco: parseFloat(preco)
                 },
                 {

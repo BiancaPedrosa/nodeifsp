@@ -1,9 +1,7 @@
 // controllers/produtoController.js
-import Mensagens from '../models/faleConosco.js'; 
+import FaleConosco from '../models/faleConosco.js'; 
 
 const faleController = {
-
-
     // Controller para adicionar um novo produto
     showFormFaleConosco: (req, res) => {
         res.render('faleconosco');
@@ -13,7 +11,7 @@ const faleController = {
     addNewMensagem: async (req, res) => {
         const { nome, email, mensagem } = req.body;
         try {
-            await Mensagens.create({
+            await FaleConosco.create({
                 nome: nome,
                 email: email,
                 mensagem: mensagem

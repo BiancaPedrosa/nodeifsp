@@ -1,6 +1,6 @@
 import { Sequelize, sequelize } from './db.js'; // Import named exports
 
-const Mensagens = sequelize.define('faleConosco', {
+const Faleconosco = sequelize.define('faleConosco', {
    id:{
       type: Sequelize.INTEGER,
       primaryKey: true,
@@ -27,4 +27,4 @@ sequelize.sync({ force: false })
       console.error('Erro ao criar faleConosco!', error);
    });
 // Export the Produtos model
-export default Mensagens;
+export default Faleconosco;

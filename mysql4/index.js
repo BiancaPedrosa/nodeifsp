@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // --- ROUTES ---
-// Mount the product routes under the /produtos path
+// Mount the routes under the /produtos ou /fale  path
 app.use('/produtos', produtoRoutes);
 app.use('/fale', faleRoutes);
 

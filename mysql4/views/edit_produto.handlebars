@@ -1,0 +1,19 @@
+{{! views/edit_produto.handlebars }}
+
+<h1>Editar Produto: {{produto.nome}}</h1>
+
+<form action="/produtos/edit/{{produto.id}}" method="POST">
+    <input type="hidden" name="id" value="{{produto.id}}"> {{!-- Hidden input for the ID --}}
+
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" value="{{produto.nome}}" required><br><br>
+
+    <label for="preco">Preço:</label><br>
+    <input type="number" id="preco" name="preco" step="0.01" value="{{produto.preco}}" required><br><br>
+
+    <button type="submit">Salvar Alterações</button>
+    <a href="/produtos">Cancelar</a>
+</form>
+
+{{!-- Optional: Add a link to go back to the product list --}}
+<p><a href="/produtos">Voltar para a lista de produtos</a></p> 

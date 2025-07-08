@@ -1,0 +1,37 @@
+{{! views/produtos.handlebars }}
+
+<h1>Lista de Produtos</h1>
+
+{{#if produtos}}
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>R$ {{preco}}</td>
+                <td>
+                    {{!-- Edit Link --}}
+                    <a href="/produtos/edit/{{id}}">Editar</a> 
+                    {{!-- Delete Form --}}
+                    <form action="/produtos/delete/{{id}}" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="{{id}}">
+                        <button type="submit" style="background:none; border:none; padding:0; cursor:pointer; color:blue; text-decoration:underline;">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum produto cadastrado.</p>
+{{/if}}
+
+<p><a href="/produtos/new">Adicionar Novo Produto</a></p>
+<p><a href="/fale/new">Fale Conosco</a></p>

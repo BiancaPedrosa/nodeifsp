@@ -1,0 +1,31 @@
+{{! views/cardapio.handlebars }}
+<div class="container text-center">
+    <h1>Cardápio</h1>
+    <p>Confira nossos produtos disponíveis:</p>     
+</div>
+
+{{! Renderiza a tabela de produtos }}
+{{! Se houver produtos, exibe a tabela, caso contrário, exibe uma mensagem }}
+{{! A tabela é estilizada com Bootstrap para uma melhor apresentação }}
+{{! A classe "table-striped" aplica um estilo listrado às linhas da tabela }}
+
+{{#if produtos}}
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>R$ {{preco}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum produto cadastrado.</p>
+{{/if}}

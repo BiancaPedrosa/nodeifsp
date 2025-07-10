@@ -1,0 +1,25 @@
+img{
+   width: 800px;
+   margin-left:0 auto;
+   margin-right:0 auto;
+}
+body{
+   background-color: lightgray;
+   text-align: center;
+}
+nav ul li{
+   display: inline-block;
+   align-items: center; 
+   margin: 10px
+}
+nav  {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: gray
+}
+a:active{ color: orange;}
+a:visited { color: lightsteelblue;}
+a:link{ color: lightsteelblue;}
+a:hover{ color: orange;}

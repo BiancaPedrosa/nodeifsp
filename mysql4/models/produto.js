@@ -1,4 +1,4 @@
-import { Sequelize, sequelize } from './db.js'; // Import named exports
+import { Sequelize, sequelize } from '../config/database.js'; // Import named exports
 
 const Produtos = sequelize.define('produtos', {
    id:{

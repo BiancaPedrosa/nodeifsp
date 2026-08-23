@@ -1,5 +1,4 @@
 const express = require('express'); //importe o módulo 'express'
-const bodyParser= require('body-parser'); // Importe o módulo 'body-parser'
 const path = require('path'); // Importe o módulo 'path'
 
 const app = express();
@@ -7,8 +6,8 @@ const port = 3000;
 
 // Configurar o diretório para arquivos estáticos
 app.use(express.static(path.join(__dirname)));
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: false})); //para processar dados de formulários
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Rota 1: Página Principal
 app.get('/', (req, res) => {
